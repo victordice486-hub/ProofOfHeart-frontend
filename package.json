@@ -6,12 +6,12 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "node ./scripts/validate-production-build.mjs && next build",
+    "dev": "node api.js && next dev",
+    "build": "node api.js && node ./scripts/validate-production-build.mjs && next build",
     "build:analyze": "node ./scripts/optimize-build.mjs && node ./scripts/validate-production-build.mjs && NEXT_PRIVATE_COMPILATION_CACHE=1 next build",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "start": "next start",
+    "start": "node api.js && next start",
     "lint": "eslint",
     "prepare": "husky",
     "format": "prettier --write .",
