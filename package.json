@@ -6,12 +6,12 @@
     "node": ">=22"
   },
   "scripts": {
-    "dev": "next dev",
-    "build": "node ./scripts/validate-production-build.mjs && next build",
-    "build:analyze": "node ./scripts/optimize-build.mjs && node ./scripts/validate-production-build.mjs && NEXT_PRIVATE_COMPILATION_CACHE=1 next build",
+    "dev": "node init && next dev",
+    "build": "node init && node ./scripts/validate-production-build.mjs && next build",
+    "build:analyze": "node init && node ./scripts/optimize-build.mjs && node ./scripts/validate-production-build.mjs && NEXT_PRIVATE_COMPILATION_CACHE=1 next build",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
-    "start": "next start",
+    "build-storybook": "node init && storybook build",
+    "start": "node init && next start",
     "lint": "eslint",
     "prepare": "husky",
     "format": "prettier --write .",
